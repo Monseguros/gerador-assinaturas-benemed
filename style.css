@@ -87,11 +87,6 @@ h1 {
   transition: var(--transition);
 }
 
-.card:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  transform: translateY(-5px);
-}
-
 .card-title {
   font-size: 1.5rem;
   color: var(--primary-dark);
@@ -179,7 +174,6 @@ input:focus {
 .btn-primary:hover {
   background: #ffb91c;
   box-shadow: 0 6px 14px rgba(255, 200, 69, 0.4);
-  transform: translateY(-2px);
 }
 
 .btn-secondary {
@@ -191,7 +185,6 @@ input:focus {
 .btn-secondary:hover {
   background: #0a1018;
   box-shadow: 0 6px 14px rgba(16, 24, 32, 0.2);
-  transform: translateY(-2px);
 }
 
 .preview-container {
@@ -400,10 +393,6 @@ input:focus {
   border-radius: 10px;
   background: var(--gray-light);
   transition: var(--transition);
-}
-
-.step:hover {
-  transform: translateX(5px);
 }
 
 .step-number {
