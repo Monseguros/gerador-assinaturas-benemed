@@ -53,6 +53,8 @@ function gerarAssinatura() {
       showToast("Número 0800 deve ter 10 dígitos");
       return;
     }
+
+    
   } else if (telefoneLimpo.length < 10 || telefoneLimpo.length > 11) {
     showToast("Telefone deve ter 10 ou 11 dígitos (incluindo DDD)");
     return;
@@ -109,7 +111,7 @@ function baixarImagem() {
   html2canvas(assinatura, options)
     .then((canvas) => {
       const link = document.createElement("a");
-      link.download = "assinatura-mon-seguros.png";
+      link.download = `assinatura-benemed.png`;
       link.href = canvas.toDataURL("image/png");
       document.body.appendChild(link);
       link.click();

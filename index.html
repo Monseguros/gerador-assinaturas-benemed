@@ -1,181 +1,121 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gerador de Assinatura - FFH</title>
-    <!-- Bibliotecas externas -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <!-- Fontes do Google -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
 
-    <script defer src="index.js"></script>
-  </head>
-  <body>
-    <div class="container">
-      <header>
-        <img
-          src="./image/FFH/Logo FFH.png"
-          alt="Logo ffh"
-          class="logo-header"
-        />
-        <h1>Gerador de Assinatura</h1>
-        <p class="subtitle">
-          Crie assinaturas profissionais para e-mail com a identidade visual da
-          FFH
-        </p>
-      </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gerador de Assinatura - BeneMed</title>
+  <!-- Bibliotecas externas -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <!-- Fonte Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
 
-      <div class="card">
-        <h2 class="card-title"><i>📝</i> Informações para Assinatura</h2>
+  <script src="./index.js" defer></script>
 
-        <div class="form-grid">
-          <div class="input-group required">
-            <label for="nome">Nome Completo</label>
-            <input
-              type="text"
-              id="nome"
-              placeholder="Ex: João Silva"
-              required
-            />
-          </div>
+  <link rel="stylesheet" href="./style.css">
 
-          <div class="input-group required">
-            <label for="cargo">Time/Departamento</label>
-            <input
-              type="text"
-              id="cargo"
-              placeholder="Ex: Comercial"
-              required
-            />
-          </div>
+</head>
 
-          <div class="input-group required">
-            <label for="telefone">Telefone</label>
-            <input
-              type="text"
-              id="telefone"
-              placeholder="(00) 00000-0000 ou 0800-000-0000"
-              required
-            />
-          </div>
+<body>
+  <div class="container">
+    <header>
+      <img src="./image/FFH/logo%20benemed%20branco.png" alt="BeneMed" class="logo-header"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+      <div style="display:none; font-size:2rem; color:#0056a7; font-weight:700;">BeneMed</div>
+      <h1>Gerador de Assinatura</h1>
+      <p class="subtitle">Crie assinaturas profissionais com a identidade da BeneMed</p>
+    </header>
+
+    <div class="card">
+      <h2 class="card-title">Informações para Assinatura</h2>
+      <div class="form-grid">
+        <div class="input-group required">
+          <label for="nome">Nome Completo</label>
+          <input type="text" id="nome" required />
         </div>
-
-        <div class="button-group">
-          <button class="btn btn-primary" onclick="gerarAssinatura()">
-            <i>🖌️</i> Gerar Assinatura
-          </button>
-          <button class="btn btn-secondary" onclick="baixarImagem()">
-            <i>💾</i> Baixar Imagem
-          </button>
+        <div class="input-group required">
+          <label for="cargo">Cargo</label>
+          <input type="text" id="cargo" required />
+        </div>
+        <div class="input-group required">
+          <label for="telefone">Telefone</label>
+          <input type="text" id="telefone" required />
+        </div>
+        <div class="input-group required">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" required />
+        </div>
+        <div class="input-group">
+          <label for="site">Site (opcional)</label>
+          <input type="text" id="site" value="www.benemedsaude.com.br" />
         </div>
       </div>
-
-      <div class="preview-container">
-        <h3 class="preview-title">Pré-visualização da Assinatura</h3>
-        <div id="assinatura">
-          <div class="conteudo">
-            <div class="container-logo">
-              <img
-                src="./image/FFH/Logo FFH.png"
-                alt="Logo Mon Seguros"
-                class="logo"
-              />
-              <div class="business">
-                <img src="./image/FFH/logo benemed branco.png" alt="" />
-                <img src="./image/FFH/[Logo] MonSeguros v1.png" alt="" style="padding-top: 1rem;"/>
-                <img src="./image/FFH/LOGO- EDUCARE 25.pdf.png" alt="" />
-                <img src="./image/FFH/evvolue.pdf.png" alt="" style="padding-bottom: 1rem;"/>
-              </div>
-            </div>
-
-            <div class="separador-vertical"></div>
-
-            <div class="info">
-              <div class="nome" id="nomeDisplay">Seu Nome Completo</div>
-              <div class="cargo" id="cargoDisplay">Seu Time/Departamento</div>
-              <div class="linha"></div>
-              <div class="info-row">
-                <div>
-                  <img
-                    class="contact-icon"
-                    src="./image/FFH/WhatsApp.png"
-                    alt="Telefone"
-                  />
-                  <div class="telefone" id="telefoneDisplay">
-                    (00) 00000-0000
-                  </div>
-                </div>
-                <div>
-                  <img
-                    class="contact-icon"
-                    src="./image/FFH/Site.png"
-                    alt="Telefone"
-                  />
-                  <div class="site">https://holdingffh.com.br</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="separador-vertical"></div>
-
-            <div class="container-logo container-address">
-              <img class="moeda" src="./image/FFH/Ícone FFH.png" alt="" />
-              <div class="address">
-                Rua Mostardeiro, 322. Salas 1501 e 1502<br />
-                Moinhos de Vento - Porto Alegre/RS
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="instructions">
-        <h3><i>ℹ️</i> Como Utilizar</h3>
-        <div class="steps">
-          <div class="step">
-            <div class="step-number">1</div>
-            <div class="step-content">
-              Preencha seus dados nos campos acima (todos são obrigatórios)
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-number">2</div>
-            <div class="step-content">
-              Clique em "Gerar Assinatura" para visualizar
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-number">3</div>
-            <div class="step-content">
-              Clique em "Baixar Imagem" para salvar a assinatura
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-number">4</div>
-            <div class="step-content">
-              Adicione a imagem como assinatura em seu e-mail
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer">
-        © 2025 Mon Seguros - Todos os direitos reservados
+      <div class="button-group">
+        <button class="btn btn-primary" onclick="gerarAssinatura()">Gerar Assinatura</button>
+        <button class="btn btn-secondary" onclick="baixarImagem()">Baixar Imagem</button>
       </div>
     </div>
 
-    <div class="toast" id="toast">
-      <div class="toast-icon">⚠️</div>
-      <div class="toast-message">
-        Por favor, preencha todos os campos obrigatórios
+    <div class="preview-container">
+      <h3 class="preview-title">Pré-visualização da Assinatura</h3>
+      <div id="assinatura">
+        <img class="logo-canto" src="./image/hearth-blue.png" alt="" srcset="">
+        <div class="signature-content">
+          <div>
+            <div class="signature-name" id="nomeDisplay">Nome</div>
+            <div class="signature-title" id="cargoDisplay">Cargo</div>
+          </div>
+          <div class="signature-info">
+            <div class="contact-info">
+              <div class="signature-detail phone"><img src="./image/FFH/phone-icon.png" alt="" style="margin-right: .5rem;"> <span id="telefoneDisplay">(51) 99999-9999</span></div>
+              <div class="signature-detail"><a href="mailto:"><span
+                    id="emailDisplay">email@benemedsaude.com.br</span></a></div>
+            </div>
+            <div class="benemed-info">
+              <div class="signature-logo">
+                <img src="./image/FFH/logo%20benemed%20branco.png" alt="BeneMed"
+                  onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'font-size:2rem; color:#0056a7;\'>BeneMed</div>';" />
+              </div>
+              <div class="signature-detail"><a href="http://www.benemedsaude.com.br" target="_blank"
+                  rel="noopener noreferrer"><span id="siteDisplay">www.benemedsaude.com.br</span></a></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </body>
+
+    <div class="instructions">
+      <h3>Como Utilizar</h3>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">Preencha todos os campos obrigatórios (nome, cargo, telefone e e-mail).</div>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">Clique em "Gerar Assinatura" para atualizar a pré-visualização.</div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">Clique em "Baixar Imagem" para salvar sua assinatura.</div>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <div class="step-content">Adicione a imagem no rodapé do seu e-mail.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">© 2026 BeneMed - Todos os direitos reservados</div>
+  </div>
+
+  <div class="toast" id="toast">
+    <div class="toast-icon">⚠️</div>
+    <div class="toast-message"></div>
+  </div>
+</body>
+
 </html>
