@@ -38,6 +38,8 @@ function gerarAssinatura() {
   const nome = document.getElementById("nome").value.trim();
   const cargo = document.getElementById("cargo").value.trim();
   let telefone = document.getElementById("telefone").value.trim();
+  const email = document.getElementById("email").value.trim();
+
   
   // Validação dos campos obrigatórios
   if (!nome || !cargo || !telefone) {
@@ -74,6 +76,7 @@ function gerarAssinatura() {
   document.getElementById("nomeDisplay").innerText = nome;
   document.getElementById("cargoDisplay").innerText = cargo;
   document.getElementById("telefoneDisplay").innerText = telefoneFormatado;
+  document.getElementById("emailDisplay").innerText = email;
   
   // Mostra a assinatura
   document.getElementById("assinatura").style.display = 'block';
@@ -128,10 +131,12 @@ function limparFormulario() {
   document.getElementById("nome").value = "";
   document.getElementById("cargo").value = "";
   document.getElementById("telefone").value = "";
+  document.getElementById("emailDisplay").value = "";
   
   document.getElementById("nomeDisplay").innerText = "Seu Nome Completo";
   document.getElementById("cargoDisplay").innerText = "Seu Cargo";
   document.getElementById("telefoneDisplay").innerText = "(00) 0000-0000";
+  document.getElementById("emailDisplay").innerText = "email@benemed.com.br";
   
   document.getElementById("assinatura").style.display = "none";
   
