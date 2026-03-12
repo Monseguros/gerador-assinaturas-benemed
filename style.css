@@ -382,9 +382,9 @@ input:focus {
     position: absolute;
     top: -30px;
     right: -10px;
-    rotate: 180deg;
     width: 170px;
     height: 170px;
+    transform: rotate(180deg);
     opacity: .8;
     object-fit: contain;
   }
