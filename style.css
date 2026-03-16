@@ -380,8 +380,8 @@ input:focus {
 
   .logo-canto {
     position: absolute;
-    top: -30px;
-    right: -15px;
+    top: -45px;
+    right: -45px;
     width: 180px;
     height: 200px;
     transform: rotate(180deg);

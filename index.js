@@ -42,7 +42,7 @@ function gerarAssinatura() {
 
   
   // Validação dos campos obrigatórios
-  if (!nome || !cargo || !telefone) {
+  if (!nome || !cargo || !telefone || !email) {
     showToast("Por favor, preencha todos os campos obrigatórios");
     return;
   }
