@@ -203,7 +203,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Roca Two", "Roca", sans-serif;
   background: linear-gradient(135deg, #f5f7fa 0%, #e9ecf0 100%);
   min-height: 100vh;
   padding: 30px 20px;
@@ -302,7 +302,7 @@ input {
   padding: 12px 14px;
   border: 2px solid var(--gray-light);
   border-radius: 8px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Roca Two", "Roca", sans-serif;
   font-size: 0.95rem;
   transition: var(--transition);
 }
@@ -324,7 +324,7 @@ input:focus {
   padding: 12px 28px;
   border-radius: 8px;
   border: none;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Roca Two", "Roca", sans-serif;
   font-weight: 600;
   font-size: 0.95rem;
   cursor: pointer;
